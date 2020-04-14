@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const authRoutes = require('./routes/auth');
-// const userRoutes = require('./routes/user');
+const userRoutes = require('./routes/user');
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 
 app.use(authRoutes);
 
-// app.use(userRoutes);
+app.use(userRoutes);
 
 
 mongoose.connect(

@@ -50,6 +50,8 @@ exports.postLogin = (req, res, next) => {
                     res.status(200).json({ 
                         message: 'The user found, you are allowed to continue', 
                         token: token,
+                        username: user.name,
+                        favs: user.favourites,
                         userId: user._id.toString(),
                         expiresIn: 3600000
                     });
